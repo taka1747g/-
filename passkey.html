@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>パスキーってなに？</title>
+<style>
+  :root {
+    --bg: #fdf8f0;
+    --card: #ffffff;
+    --text: #3a2e22;
+    --sub: #7a6a55;
+    --accent: #e8973f;
+    --accent-dark: #c9782a;
+    --border: #efe2cc;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #201a13;
+      --card: #2b241a;
+      --text: #f3ead9;
+      --sub: #cbb99a;
+      --accent: #f0a94f;
+      --accent-dark: #f0a94f;
+      --border: #4a3f2c;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #201a13;
+    --card: #2b241a;
+    --text: #f3ead9;
+    --sub: #cbb99a;
+    --accent: #f0a94f;
+    --accent-dark: #f0a94f;
+    --border: #4a3f2c;
+  }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); height: 100%; }
+  body {
+    margin: 0;
+    height: 100%;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+    line-height: 1.8;
+    display: flex;
+    justify-content: center;
+  }
+  .wrap {
+    width: 100%;
+    max-width: 640px;
+    padding: 32px 20px 60px;
+  }
+  .hero {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .hero .key {
+    font-size: 56px;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 0 0 4px;
+    color: var(--accent-dark);
+  }
+  .sub {
+    color: var(--sub);
+    font-size: 0.95rem;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+  .card h2 {
+    font-size: 1.05rem;
+    margin: 0 0 10px;
+    color: var(--accent-dark);
+  }
+  .card p { margin: 0 0 10px; }
+  .card p:last-child { margin-bottom: 0; }
+  ul.benefits {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  ul.benefits li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    border-bottom: 1px dashed var(--border);
+  }
+  ul.benefits li:last-child { border-bottom: none; }
+  ul.benefits li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+    top: 8px;
+  }
+  .highlight {
+    background: linear-gradient(transparent 60%, rgba(232,151,63,0.35) 60%);
+    font-weight: bold;
+  }
+  .footer-note {
+    text-align: center;
+    color: var(--sub);
+    font-size: 0.85rem;
+    margin-top: 20px;
+  }
+  .from {
+    text-align: right;
+    color: var(--sub);
+    font-size: 0.9rem;
+    margin-top: 4px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="key">🔑</div>
+    <h1>パスキーってなに？</h1>
+    <div class="sub">成三ちゃんへ、かんたん解説</div>
+  </div>
+
+  <div class="card">
+    <p>「パスキー」っていうのは、<span class="highlight">パスワードや認証コードを入力しなくてよくなる、新しい魔法の鍵</span>みたいなものだよ。</p>
+    <p>今までみたいに、ややこしい英語や数字のパスワードがわからなくなったり、面倒な入力をしなくてすむ。それに、よくある「メールアドレスに送られてくる数桁の認証コードを見に行って、また元の画面に戻ってそのコードを入力する」っていう、あのイライラする手間も省けるんだよ！</p>
+  </div>
+
+  <div class="card">
+    <h2>じゃあどうやってログインするの？</h2>
+    <p>代わりに、端末の「顔認証」とか「指紋認証」、あるいは画面ロックを解除する時の暗証番号を使うだけで、サクッとログインできるようになる仕組みのことなんだ。</p>
+    <p>つまり、<strong>「成三ちゃんの持っている端末自体が、成三ちゃん専用の鍵になる」</strong>ってこと！</p>
+    <p>しかもこれ、スマホだけじゃなくて、パソコンやiPadなどの各デバイスにも、その端末独自のパスキーが作れるんだ。ただ、各デバイスで最初に使うときだけ、そのデバイスですごく簡単な設定がいるんだけどね。でも、一度パスキーを作ってしまえば、どのデバイスから操作しても手間いらずで本当に便利になるよ。</p>
+  </div>
+
+  <div class="card">
+    <h2>これの何が良いかっていうと</h2>
+    <ul class="benefits">
+      <li>パスワードを覚えなくていいから、メモを無くして探しまわる苦労とおさらばできる！（笑）</li>
+      <li>認証コードを確認しにいく面倒な作業がなくなる！</li>
+      <li>悪いやつにパスワードを盗まれる心配がないから、すごく安全！</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <p>僕もこれにしてから、ログインのストレスから解放されて本当に楽になったよ。</p>
+    <div class="from">— より</div>
+  </div>
+
+  <div class="footer-note">🔑 パスキー かんたん解説</div>
+
+</div>
+</body>
+</html>
