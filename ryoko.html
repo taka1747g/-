@@ -49,6 +49,28 @@
     text-align: center;
     margin: 25px 0;
   }
+  /* アコーディオンのデザイン */
+  details {
+    background: #f9f9f9;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    border: 1px solid #eeeeee;
+  }
+  summary {
+    font-weight: bold;
+    color: #4a4a4a;
+    cursor: pointer;
+    font-size: 1.05rem;
+    outline: none;
+  }
+  .details-content {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #cccccc;
+    font-size: 0.95rem;
+    color: #555555;
+  }
   .footer-note {
     margin-top: 40px;
     padding-top: 20px;
@@ -81,10 +103,37 @@
     </div>
     
     <p>スマホやパソコンが「安全なパスワード」を勝手に作って、専用の金庫（パスワードマネージャー）にしまってくれます。次回からは、顔認証や指紋認証をするだけで、機械が勝手にパスワードを入力してくれます。</p>
-    
+
+    <!-- ここからアコーディオン -->
+    <h3 style="color: #d88373; margin-top: 35px; border-bottom: 1px solid #f3d6d1; padding-bottom: 5px;">▼ 機種ごとのカンタン設定手順（タップで開きます）</h3>
+
+    <details>
+      <summary>📱 基本：iPhoneでの設定</summary>
+      <div class="details-content">
+        <p>新しくサイトに会員登録するとき、iPhoneが「安全なパスワードを自動作成しますか？」と聞いてくれます。これを選ぶだけで、iPhoneの金庫に保存されます。</p>
+        <p>※iPhoneの「設定」アプリ ＞「パスワード」＞「パスワードオプション」を開き、「パスワードとパスキーを自動入力」がオンになっていれば準備OKです。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>💻 パソコンが「Mac」の場合</summary>
+      <div class="details-content">
+        <p>iPhoneと同じ「Apple ID」でMacにログインしていれば、自動的に金庫が連携されます。</p>
+        <p>Macの標準ブラウザである「Safari」を使えば、何もしなくてもiPhoneで保存したパスワードがそのまま呼び出され、自動入力されます。</p>
+      </div>
+    </details>
+
+    <details>
+      <summary>🖥️ パソコンが「Windows」の場合</summary>
+      <div class="details-content">
+        <p>Windowsをお使いの場合は、「Google Chrome」というブラウザを使うのが一番カンタンです。</p>
+        <p>パソコンのChromeと、iPhoneに入れたChromeアプリの両方で、同じ「Googleアカウント」でログインしておきます。すると、Googleの金庫にパスワードが保存され、スマホでもパソコンでも同じように自動入力が使えるようになります。</p>
+      </div>
+    </details>
+    <!-- アコーディオンここまで -->
+
     <div class="footer-note">
-      <p>お使いのノートパソコン（WindowsかMacか）や、よく使うブラウザ（ChromeやSafariなど）によって、一番カンタンな設定方法が変わります。</p>
-      <p>もし「全部スマホやパソコンに自動でやらせて安全にしたい」と思ったら、いつでも声をかけてくださいね。涼子ちゃんの環境にぴったりの手順をお教えします！</p>
+      <p>もし設定の途中で「ここはどうするの？」と迷ったら、いつでも声をかけてくださいね。涼子ちゃんの画面を見ながら一緒に設定しましょう！</p>
     </div>
   </div>
 </body>
