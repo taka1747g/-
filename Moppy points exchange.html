@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>モッピーポイントの交換方法</title>
+  <style>
+    :root {
+      --primary-color: #f39800;
+      --primary-light: #fff7ed;
+      --accent-color: #e65100;
+      --text-main: #333333;
+      --text-sub: #666666;
+      --border-color: #fed7aa;
+      --bg-color: #fafaf9;
+      --card-bg: #ffffff;
+      --alert-bg: #fef2f2;
+      --alert-border: #f87171;
+      --alert-text: #991b1b;
+      --tip-bg: #eff6ff;
+      --tip-border: #60a5fa;
+      --tip-text: #1e40af;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 16px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto 40px auto;
+    }
+
+    header {
+      background: linear-gradient(135deg, #f39800, #fb923c);
+      color: #ffffff;
+      padding: 24px 20px;
+      border-radius: 14px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(243, 152, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 8px;
+    }
+
+    .meta-info {
+      font-size: 0.85rem;
+      text-align: right;
+      opacity: 0.95;
+    }
+
+    /* アコーディオン全体 */
+    details {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+      overflow: hidden;
+      transition: all 0.2s ease;
+    }
+
+    details[open] {
+      border-color: var(--primary-color);
+      box-shadow: 0 4px 12px rgba(243, 152, 0, 0.12);
+    }
+
+    summary {
+      padding: 16px 20px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      user-select: none;
+      background-color: var(--card-bg);
+      transition: background-color 0.2s;
+    }
+
+    summary:hover {
+      background-color: var(--primary-light);
+    }
+
+    /* 三角矢印マークのカスタマイズ */
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: "▼";
+      font-size: 0.75rem;
+      color: var(--primary-color);
+      transition: transform 0.25s ease;
+      margin-left: 10px;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .content {
+      padding: 6px 20px 20px 20px;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.95rem;
+    }
+
+    /* 手順ステップ表示 */
+    .step-flow {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 12px 14px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .step-badge {
+      background: #e2e8f0;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .arrow {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* タグ・数値強調 */
+    .badge-deal {
+      display: inline-block;
+      background-color: #ef4444;
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: bold;
+      padding: 2px 8px;
+      border-radius: 12px;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+
+    .spec-table td {
+      padding: 8px 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .spec-table td:first-child {
+      font-weight: bold;
+      color: var(--text-sub);
+      width: 32%;
+    }
+
+    /* コツ・裏ワザ案内枠 */
+    .tip-box {
+      background-color: var(--tip-bg);
+      border-left: 4px solid var(--tip-border);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0 8px 0;
+      color: var(--tip-text);
+      font-size: 0.92rem;
+    }
+
+    .tip-title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+
+    /* 注意案内枠 */
+    .alert-box {
+      background-color: var(--alert-bg);
+      border-left: 4px solid var(--alert-border);
+      padding: 12px 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 14px 0 8px 0;
+      color: var(--alert-text);
+      font-size: 0.92rem;
+    }
+
+    .alert-title {
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+
+    /* 番号付き操作手順 */
+    .order-list {
+      margin: 10px 0 10px 20px;
+    }
+
+    .order-list li {
+      margin-bottom: 6px;
+      padding-left: 4px;
+    }
+
+    .note-text {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-top: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      margin-top: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>モッピーポイントの交換方法</h1>
+      <div class="meta-info">2026/10/1 by taka</div>
+    </header>
+
+    <!-- ① PayPayポイント・楽天ポイント -->
+    <details open>
+      <summary>① PayPayポイント・楽天ポイント</summary>
+      <div class="content">
+        <table class="spec-table">
+          <tr>
+            <td>PayPayポイント</td>
+            <td><strong>即時交換</strong></td>
+          </tr>
+          <tr>
+            <td>楽天ポイント</td>
+            <td>1～2日程度（目安）</td>
+          </tr>
+          <tr>
+            <td>交換レート</td>
+            <td>550ポイント → <strong>500ポイント</strong></td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 14px; font-weight: bold; color: var(--text-sub);">【交換手順】</div>
+        <div class="step-flow">
+          <span class="step-badge">マイページ</span>
+          <span class="arrow">→</span>
+          <span class="step-badge">ポイント交換</span>
+          <span class="arrow">→</span>
+          <span class="step-badge">電子マネー</span>
+          <span class="arrow">→</span>
+          <span>希望するポイントを選択</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- ② Amazonギフトカード -->
+    <details>
+      <summary>
+        ② Amazonギフトカード
+        <span class="badge-deal">お得！</span>
+      </summary>
+      <div class="content">
+        <table class="spec-table">
+          <tr>
+            <td>交換速度</td>
+            <td><strong>即時交換</strong></td>
+          </tr>
+          <tr>
+            <td>交換レート</td>
+            <td><strong>490ポイント → 500円分</strong>（増量レート）</td>
+          </tr>
+        </table>
+
+        <div style="margin-top: 14px; font-weight: bold; color: var(--text-sub);">【交換手順】</div>
+        <div class="step-flow">
+          <span class="step-badge">マイページ</span>
+          <span class="arrow">→</span>
+          <span class="step-badge">ポイント交換</span>
+          <span class="arrow">→</span>
+          <span class="step-badge">ギフト券</span>
+          <span class="arrow">→</span>
+          <span>Amazonギフトカード</span>
+        </div>
+      </div>
+    </details>
+
+    <!-- ③ 銀行振込（ドットマネー経由） -->
+    <details>
+      <summary>③ 銀行振込（ドットマネー経由で現金化）</summary>
+      <div class="content">
+        <p>モッピーポイントを現金としてご自身の銀行口座に振り込んでもらう方法です。</p>
+        
+        <table class="spec-table">
+          <tr>
+            <td>交換レート</td>
+            <td><strong>等価交換</strong></td>
+          </tr>
+          <tr>
+            <td>モッピー → ドットマネー</td>
+            <td>即日（目安）</td>
+          </tr>
+          <tr>
+            <td>ドットマネー → 口座</td>
+            <td>1週間程度（目安）</td>
+          </tr>
+          <tr>
+            <td>振込制限</td>
+            <td><strong>1日 10,000円まで</strong></td>
+          </tr>
+        </table>
+
+        <div class="tip-box">
+          <div class="tip-title">💡 おすすめの交換方法（裏ワザ）</div>
+          銀行振込の申請中は、次の交換申請ができません。<br>
+          そのため、10,000円を超えるポイントがある場合は、<strong>数日に分けてドットマネーに交換して貯めておき、最後にまとめて銀行振込を申請する</strong>と非常に効率的です。
+        </div>
+
+        <div style="margin-top: 14px; font-weight: bold; color: var(--text-sub);">【モッピーからドットマネーへの交換手順】</div>
+        <div class="step-flow">
+          <span class="step-badge">マイページ</span>
+          <span class="arrow">→</span>
+          <span class="step-badge">ポイント交換</span>
+          <span class="arrow">→</span>
+          <span class="step-badge">他社ポイント</span>
+          <span class="arrow">→</span>
+          <span>ドットマネー</span>
+        </div>
+        <div class="note-text">※初めて利用する場合は、ドットマネーの登録・連携手続きに進みます。</div>
+      </div>
+    </details>
+
+    <!-- ④ 初めてのドットマネー登録について -->
+    <details>
+      <summary>④ 初めてのドットマネー登録について</summary>
+      <div class="content">
+        <p>ドットマネーを利用するには、最初に「<strong>Ameba（アメーバ）</strong>」というサービスのアカウントが必要です。</p>
+        <p style="margin-top: 6px;">Amebaを今まで利用したことがなくても大丈夫です。今回のポイント交換のために、新しくアカウントを作成することができます。</p>
+
+        <div class="alert-box">
+          <div class="alert-title">⚠️ ここで一つ注意！</div>
+          <strong>Ameba（アメーバ）と ABEMA（アベマ）は別のサービスです。</strong>
+          <ul style="margin: 6px 0 0 18px;">
+            <li><strong>Ameba（アメーバ）：</strong> 今回のドットマネー登録に使うサービス</li>
+            <li><strong>ABEMA（アベマ）：</strong> インターネットテレビのサービス（今回の手続きには関係ありません）</li>
+          </ul>
+        </div>
+        <p style="margin-top: 8px;">画面の案内に従って、新規登録またはログインを進めてください。</p>
+      </div>
+    </details>
+
+    <!-- ⑤ ドットマネーから銀行口座への振込 -->
+    <details>
+      <summary>⑤ ドットマネーから銀行口座への振込手順</summary>
+      <div class="content">
+        <p>モッピーから交換したマネーがドットマネーに反映されたら、次の操作を行います。</p>
+        
+        <ol class="order-list">
+          <li>ドットマネーにログイン</li>
+          <li>「<strong>マネーをつかう</strong>」を選択</li>
+          <li>「<strong>銀行振込</strong>」を選択</li>
+          <li>銀行名・支店名・口座番号などを入力</li>
+          <li>交換申請を実行</li>
+        </ol>
+
+        <div class="alert-box" style="margin-top: 10px;">
+          <strong>※ 注意事項：</strong><br>
+          銀行口座の名義と、ドットマネーの登録名義は<strong>必ず一致している必要があります</strong>。
+        </div>
+      </div>
+    </details>
+
+    <footer>
+      以上
+    </footer>
+  </div>
+
+</body>
+</html>
