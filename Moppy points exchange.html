@@ -20,6 +20,9 @@
       --tip-bg: #eff6ff;
       --tip-border: #60a5fa;
       --tip-text: #1e40af;
+      --success-bg: #f0fdf4;
+      --success-border: #86efac;
+      --success-text: #166534;
     }
 
     * {
@@ -206,6 +209,18 @@
       border-radius: 8px;
       margin: 16px 0 16px 0;
       letter-spacing: 0.02em;
+    }
+
+    /* 楽しみに待つ案内枠（緑） */
+    .wait-box {
+      background-color: var(--success-bg);
+      border: 1px solid var(--success-border);
+      color: var(--success-text);
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin: 14px 0;
+      font-weight: bold;
+      text-align: center;
     }
 
     /* 注意案内枠 */
@@ -421,7 +436,7 @@
       </div>
     </details>
 
-    <!-- メール認証に関する重要案内 -->
+    <!-- メール認証に関する重要案内（赤枠・茶色文字） -->
     <div class="alert-box" style="margin-top: 20px;">
       <div class="alert-title">⚠️ ここで要注意！（まだ手続きは済んでいません）</div>
       モッピー画面で交換申請ボタンを押しただけでは、まだ交換は完了していません。<br>
@@ -429,7 +444,12 @@
       <strong>メール内に記載されている確認リンク（URL）をクリックして、初めて申請が完了します</strong>ので必ずメールをご確認ください。
     </div>
 
-    <!-- おすすめの交換方法（裏ワザ） -->
+    <!-- ここに挿入：楽しみに待つ案内枠（緑） -->
+    <div class="wait-box">
+      ✨ 一週間ほどで指定した銀行に振り込まれます。楽しみに待ちましょう！
+    </div>
+
+    <!-- おすすめの交換方法（裏ワザ）（水色枠） -->
     <div class="tip-box">
       <div class="tip-title">💡 おすすめの交換方法（裏ワザ）</div>
       ドットマネーを銀行口座へ振込申請している間は、次の交換申請ができません。<br>
