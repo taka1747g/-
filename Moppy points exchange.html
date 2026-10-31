@@ -183,7 +183,7 @@
       border-left: 4px solid var(--tip-border);
       padding: 12px 14px;
       border-radius: 0 8px 8px 0;
-      margin: 14px 0 8px 0;
+      margin: 14px 0;
       color: var(--tip-text);
       font-size: 0.92rem;
     }
@@ -214,7 +214,7 @@
       border-left: 4px solid var(--alert-border);
       padding: 12px 14px;
       border-radius: 0 8px 8px 0;
-      margin: 14px 0 8px 0;
+      margin: 14px 0;
       color: var(--alert-text);
       font-size: 0.92rem;
     }
@@ -358,12 +358,6 @@
           </tr>
         </table>
 
-        <div class="tip-box">
-          <div class="tip-title">💡 おすすめの交換方法（裏ワザ）</div>
-          ドットマネーを銀行口座へ振込申請している間は、次の交換申請ができません。<br>
-          そのため、10,000円を超えるポイントがある場合は、<strong>数日に分けてドットマネーに交換して貯めておき、最後にまとめて銀行振込を申請する</strong>と非常に効率的です。
-        </div>
-
         <div style="margin-top: 14px; font-weight: bold; color: var(--text-sub);">【モッピーからドットマネーへの交換手順】</div>
         <div class="step-flow">
           <span class="step-badge">マイページ</span>
@@ -375,14 +369,6 @@
           <span>ドットマネー</span>
         </div>
         <div class="note-text">※初めて利用する場合は、ドットマネーの登録・連携手続きに進みます。</div>
-
-        <!-- メール認証に関する重要案内 -->
-        <div class="alert-box" style="margin-top: 14px;">
-          <div class="alert-title">⚠️ ここで要注意！（まだ手続きは済んでいません）</div>
-          モッピー画面で交換申請ボタンを押しただけでは、まだ交換は完了していません。<br>
-          登録メールアドレスに<strong>「【モッピー】ポイント交換申請確認」</strong>というメールが届きます。<br>
-          <strong>メール内に記載されている確認リンク（URL）をクリックして、初めて申請が完了します</strong>ので必ずメールをご確認ください。
-        </div>
       </div>
     </details>
 
@@ -433,8 +419,23 @@
       </div>
     </details>
 
+    <!-- メール認証に関する重要案内 -->
+    <div class="alert-box" style="margin-top: 20px;">
+      <div class="alert-title">⚠️ ここで要注意！（まだ手続きは済んでいません）</div>
+      モッピー画面で交換申請ボタンを押しただけでは、まだ交換は完了していません。<br>
+      登録メールアドレスに<strong>「【モッピー】ポイント交換申請確認」</strong>というメールが届きます。<br>
+      <strong>メール内に記載されている確認リンク（URL）をクリックして、初めて申請が完了します</strong>ので必ずメールをご確認ください。
+    </div>
+
+    <!-- おすすめの交換方法（裏ワザ） -->
+    <div class="tip-box">
+      <div class="tip-title">💡 おすすめの交換方法（裏ワザ）</div>
+      ドットマネーを銀行口座へ振込申請している間は、次の交換申請ができません。<br>
+      そのため、10,000円を超えるポイントがある場合は、<strong>数日に分けてドットマネーに交換して貯めておき、最後にまとめて銀行振込を申請する</strong>と非常に効率的です。
+    </div>
+
     <!-- ポイントの有効期限について -->
-    <div class="tip-box" style="margin-top: 20px;">
+    <div class="tip-box">
       <div class="tip-title">💡 ポイントの有効期限について</div>
       モッピーポイントに決まった有効期限はありません。<br>
       ただし、<strong>「最後にポイントを獲得してから180日（約半年間）」全くポイント獲得がないと全て失効</strong>してしまいます。<br>
